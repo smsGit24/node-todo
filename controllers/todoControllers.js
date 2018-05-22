@@ -10,19 +10,6 @@ var todoSchema = mongoose.Schema({
 
 var Todo = mongoose.model('Todo', todoSchema)
 
-// var itemOne = Todo({item: 'buy flower'}).save(function (err) {
-//   if (err) throw err;
-//   console.log('item saved');
-// })
-
-// var data = [{
-//   item: 'get milk'
-// }, {
-//   item: 'walk dog'
-// }, {
-//   item: 'kick some coding ass'
-// }];
-
 module.exports = function (app) {
   app.get('/todo', function (req, res) {
     Todo.find({}, function (err, data) {
